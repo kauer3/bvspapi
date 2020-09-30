@@ -36,7 +36,7 @@ class CreateUserService {
       city,
       company,
       country,
-      email,
+      email: email.toLocaleLowerCase().trim(),
       accesscode: hashedPassword,
     });
 
