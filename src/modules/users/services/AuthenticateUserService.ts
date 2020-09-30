@@ -34,6 +34,8 @@ class AuthenticateUserService {
       user.accesscode,
     );
 
+    console.log(user);
+
     if (!passwordMatched) {
       throw new AppError('Incorrect email/password combination', 401);
     }

@@ -27,7 +27,7 @@ class UserTokensRepository implements IUserTokensRepository {
   public async findByToken(token: string): Promise<UserToken | undefined> {
     const tokenData = await firebase
       .firestore()
-      .collection('token')
+      .collection('tokens')
       .where('token', '==', token)
       .get()
       .then(snapshot => {

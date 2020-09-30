@@ -87,6 +87,16 @@ class UsersRepository implements IUsersRepository {
 
     return data;
   }
+
+  public async save(userData: IUserDataDTO): Promise<IUserDataDTO> {
+    await firebase
+      .firestore()
+      .collection('users')
+      .doc(userData.id)
+      .update(userData);
+
+    return userData;
+  }
 }
 
 export default UsersRepository;
