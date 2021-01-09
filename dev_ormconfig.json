@@ -8,14 +8,14 @@
     "password": "bvsp",
     "database": "bvsp",
     "entities": [
-      "./dist/modules/**/infra/typeorm/entities/*.js"
+      "./src/modules/**/infra/typeorm/entities/*.ts"
     ],
     "migrations": [
-      "./dist/shared/infra/typeorm/migrations/*.js"
+      "./src/shared/infra/typeorm/migrations/*.ts"
     ],
-    "seeds": ["./dist/shared/infra/typeorm/seeds/*.js"],
+    "seeds": ["./src/shared/infra/typeorm/seeds/*.ts"],
     "cli": {
-      "migrationsDir": "./dist/shared/infra/typeorm/migrations"
+      "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
   }
 ]
