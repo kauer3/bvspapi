@@ -18,6 +18,8 @@ import alertRequestRouter from '@modules/requests/infra/http/routes/alertRequest
 import alertsTodayByTypeRequest from '@modules/requests/infra/http/routes/alertsTodayByTypeRequest.routes';
 import alertRequestCountToday from '@modules/requests/infra/http/routes/alertRequestCountToday.routes';
 
+import infomobileapp from '@modules/infomobileapp/infra/http/routes/infomobileapp.routes';
+
 const routes = Router();
 
 // User Routes
@@ -41,5 +43,7 @@ routes.use('/requests/budget', requestsBudgets);
 routes.use('/requests/history', requestsHistory);
 routes.use('/requests/indicators', indicatorsRouter);
 routes.use('/request-status', requestsStatus);
+
+routes.use('/info-mobile-app', infomobileapp);
 
 export default routes;
