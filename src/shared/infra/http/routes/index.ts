@@ -22,6 +22,10 @@ import infomobileapp from '@modules/infomobileapp/infra/http/routes/infomobileap
 
 const routes = Router();
 
+routes.get('/', (req, res) => {
+  return res.json({message: 'Olá, bem vindo a API da BVSP!'});
+});
+
 // User Routes
 routes.use('/users', usersRouter);
 routes.use('/sessions', sessionsRouter);

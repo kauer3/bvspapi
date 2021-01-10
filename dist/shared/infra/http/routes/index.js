@@ -43,7 +43,12 @@ var _infomobileapp = _interopRequireDefault(require("../../../../modules/infomob
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const routes = (0, _express.Router)(); // User Routes
+const routes = (0, _express.Router)();
+routes.get('/', (req, res) => {
+  return res.json({
+    message: 'Olá, bem vindo a API da BVSP!'
+  });
+}); // User Routes
 
 routes.use('/users', _users.default);
 routes.use('/sessions', _sessions.default);

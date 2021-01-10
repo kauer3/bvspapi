@@ -23,13 +23,13 @@ export default class ForgotPasswordController {
       userRepository,
       mailjet,
       userTokensRepository,
-      hashProvider,
+      hashProvider
     );
 
     await sendForgotPasswordEmail.execute({
       email,
     });
 
-    return response.status(204).json();
+    return response.status(204).json({});
   }
 }

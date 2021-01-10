@@ -31,8 +31,8 @@ class Mailjet {
       }).request({
         Messages: [{
           From: {
-            Email: from?.email || 'bvspapp@gmail.com',
-            Name: from?.name || 'BVSP'
+            Email: 'bvspapp@gmail.com',
+            Name: 'BVSP'
           },
           To: [{
             Email: to.email,
