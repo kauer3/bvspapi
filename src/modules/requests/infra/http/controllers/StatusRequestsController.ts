@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
+import { Request, Response } from "express";
 
-import ShowStatusRequestService from '@modules/requests/services/ShowStatusRequestService';
-import FollowUpRequestsRepository from '../../typeorm/repositories/FollowUpRequestsRepository';
+import ShowStatusRequestService from "@modules/requests/services/ShowStatusRequestService";
+import FollowUpRequestsRepository from "../../typeorm/repositories/FollowUpRequestsRepository";
 
 export default class StatusRequestsController {
   public async show(request: Request, response: Response): Promise<Response> {
@@ -11,7 +11,7 @@ export default class StatusRequestsController {
 
     const followUpRequestsRepository = new FollowUpRequestsRepository();
     const showStatusRequestService = new ShowStatusRequestService(
-      followUpRequestsRepository,
+      followUpRequestsRepository
     );
 
     const status = await showStatusRequestService.execute(request_id);

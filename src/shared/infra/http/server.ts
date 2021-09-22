@@ -1,15 +1,15 @@
-import 'reflect-metadata';
-import 'dotenv/config';
+import "reflect-metadata";
+import "dotenv/config";
 
-import express, { Request, Response, NextFunction } from 'express';
-import cors from 'cors';
-import { errors } from 'celebrate';
-import 'express-async-errors';
+import express, { Request, Response, NextFunction } from "express";
+import cors from "cors";
+import { errors } from "celebrate";
+import "express-async-errors";
 
-import AppError from '@shared/errors/AppError';
-import '@shared/infra/typeorm';
+import AppError from "@shared/errors/AppError";
+import "@shared/infra/typeorm";
 
-import routes from './routes';
+import routes from "./routes";
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   // Verificando se o erro é gerado e vem do AppError que eu criei
   if (err instanceof AppError) {
     return response.status(err.statusCode).json({
-      status: 'error',
+      status: "error",
       message: err.message,
     });
   }
@@ -33,12 +33,12 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   console.error(err);
 
   return response.status(500).json({
-    status: 'error',
-    message: 'Internal server error',
+    status: "error",
+    message: "Internal server error",
   });
 });
 
 app.listen(8080, () => {
   // eslint-disable-next-line
-  console.log('Server is running on port 8080!');
+  console.log("Server is running on port 8080!");
 });
