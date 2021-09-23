@@ -26,7 +26,13 @@ import puppeteer from "puppeteer";
 import axios from "axios";
 import PDFMerger from "pdf-merger-js";
 
+import infomobileapp from '@modules/infomobileapp/infra/http/routes/infomobileapp.routes';
+
 const routes = Router();
+
+routes.get('/', (req, res) => {
+  return res.json({message: 'Olá, bem vindo a API da BVSP!'});
+});
 
 // User Routes
 routes.use("/users", usersRouter);
@@ -96,5 +102,7 @@ routes.get("/pdf", async (request, res) => {
   }
   return res.sendFile(`invoice-${language}-final.pdf`, { root: "." });
 });
+
+routes.use('/info-mobile-app', infomobileapp);
 
 export default routes;

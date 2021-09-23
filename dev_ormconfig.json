@@ -1,0 +1,21 @@
+[
+  {
+    "name": "default",
+    "type": "postgres",
+    "host": "35.245.220.20",
+    "port": 5432,
+    "username": "postgres",
+    "password": "bvsp",
+    "database": "bvsp",
+    "entities": [
+      "./src/modules/**/infra/typeorm/entities/*.ts"
+    ],
+    "migrations": [
+      "./src/shared/infra/typeorm/migrations/*.ts"
+    ],
+    "seeds": ["./src/shared/infra/typeorm/seeds/*.ts"],
+    "cli": {
+      "migrationsDir": "./src/shared/infra/typeorm/migrations"
+    }
+  }
+]

@@ -13,9 +13,6 @@ export default class SeedUserProfiles implements Seeder {
           name: 'venda',
         },
         {
-          name: 'atendimento',
-        },
-        {
           name: 'orçamento',
         },
         {
@@ -29,6 +26,9 @@ export default class SeedUserProfiles implements Seeder {
         },
         {
           name: 'qualidade',
+        },
+        {
+          name: 'técnico',
         },
       ])
       .execute();

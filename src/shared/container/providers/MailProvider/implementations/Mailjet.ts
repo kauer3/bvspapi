@@ -25,8 +25,8 @@ export default class Mailjet implements ImailProvider {
         Messages: [
           {
             From: {
-              Email: from?.email || 'bvspapp@gmail.com',
-              Name: from?.name || 'BVSP',
+              Email: 'bvspapp@gmail.com',
+              Name: 'BVSP',
             },
             To: [
               {
